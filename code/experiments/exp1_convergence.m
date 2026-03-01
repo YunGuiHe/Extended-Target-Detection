@@ -107,6 +107,11 @@ for target_id = 1:2
     xlabel('Number of Iterations');
     ylabel('Objective Value');
     title(sprintf('((%s)) Target %d, Low SINR', char('a' + (target_id-1)*2 + 1), target_id));
+    if target_id == 1
+        xlim([1, 4]);   % 论文 Fig.3(b) 横轴范围
+    else
+        xlim([1, 3]);   % 论文 Fig.3(d) 横轴范围
+    end
 end
 
 sgtitle('Fig.3: Iteration Curves - Convergence Verification', 'FontSize', 14);
